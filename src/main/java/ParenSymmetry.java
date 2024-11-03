@@ -4,7 +4,25 @@ import java.util.List;
 public class ParenSymmetry {
 
     public Boolean isBalanced(String s) {
-        return null;
+        StringBuilder parenthesisOnlyBuilder = new StringBuilder();
+        int leftParen = 0;
+        int rightParen = 0;
+        for (char c:s.toCharArray()) {
+      //      if ((c == '(') || (c == ')')){
+            if (c == '('){
+                parenthesisOnlyBuilder.append(c);
+                leftParen++;
+            } else if (c == ')') {
+                parenthesisOnlyBuilder.append(c);
+                rightParen++;
+            }
+        }
+        if (leftParen == rightParen){return true;
+        }else return false;
+//        String parenthesisOnly = parenthesisOnlyBuilder.toString();
+//        String reversed = new StringBuilder(parenthesisOnly).reverse().toString();
+//        return parenthesisOnly == reversed;
+
     }
 
     private void checkFile(String filename) {
